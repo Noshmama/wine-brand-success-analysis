@@ -430,133 +430,6 @@
             color: var(--accent);
         }
 
-        /* Case study */
-        .case-study {
-            background: var(--card);
-            border: 1px solid rgba(217, 119, 6, 0.25);
-            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-            border-radius: 16px;
-            padding: 2.5rem;
-            margin: 2.5rem 0;
-        }
-
-        .case-study-label {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--amber);
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .case-study h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.35rem;
-        }
-
-        .case-study .cs-subtitle {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-        }
-
-        .timeline {
-            position: relative;
-            padding-left: 2rem;
-            margin: 1.5rem 0;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 7px;
-            top: 4px;
-            bottom: 4px;
-            width: 2px;
-            background: var(--border);
-        }
-
-        .timeline-item {
-            position: relative;
-            padding-bottom: 1.25rem;
-        }
-
-        .timeline-item:last-child { padding-bottom: 0; }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -2rem;
-            top: 6px;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            border: 2px solid var(--border);
-            background: var(--card);
-        }
-
-        .timeline-item.rise::before { border-color: var(--green); background: rgba(22,163,74,0.15); }
-        .timeline-item.peak::before { border-color: var(--amber); background: rgba(217,119,6,0.15); }
-        .timeline-item.decline::before { border-color: var(--red); background: rgba(220,38,38,0.15); }
-        .timeline-item.pivot::before { border-color: var(--accent); background: rgba(124,58,237,0.15); }
-
-        .timeline-year {
-            font-size: 0.8rem;
-            font-weight: 700;
-            color: var(--text-muted);
-            margin-bottom: 0.15rem;
-        }
-
-        .timeline-event { font-size: 0.9rem; }
-
-        .timeline-item.rise .timeline-event { color: var(--green); }
-        .timeline-item.peak .timeline-event { color: var(--amber); }
-        .timeline-item.decline .timeline-event { color: var(--red); }
-        .timeline-item.pivot .timeline-event { color: var(--accent-light); }
-
-        .timeline-detail {
-            font-size: 0.82rem;
-            color: var(--text-muted);
-            margin-top: 0.2rem;
-        }
-
-        .cs-lessons {
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--border);
-        }
-
-        .cs-lessons h4 {
-            font-size: 1rem;
-            margin-bottom: 0.75rem;
-            color: var(--amber);
-        }
-
-        .cs-lessons-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-        }
-
-        .cs-lesson-item {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            padding: 0.75rem 1rem;
-            background: rgba(217, 119, 6, 0.04);
-            border-radius: 8px;
-            border: 1px solid rgba(217, 119, 6, 0.12);
-        }
-
-        .cs-lesson-item strong {
-            color: var(--text);
-            display: block;
-            margin-bottom: 0.25rem;
-        }
-
-        @media (max-width: 700px) {
-            .cs-lessons-grid { grid-template-columns: 1fr; }
-        }
-
         /* Sources */
         .sources {
             margin-top: 3rem;
@@ -868,7 +741,7 @@
     <div class="category-section" style="border-left: 3px solid var(--accent);">
         <h3>Do RTDs Compete Directly with Wine?</h3>
         <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;"><strong style="color: var(--text);">At the value tier, yes.</strong> Below $10, wine is losing casual occasions to simpler, single-serve RTDs. A consumer deciding between an $8 bottle of Sutter Home and a $3.50 can of High Noon for a Tuesday evening increasingly reaches for the can &mdash; not because it's better, but because it's simpler. The value brands declining fastest (Woodbridge -9.3%, Sutter Home -2.8% per NielsenIQ) are losing this convenience and occasion comparison.</p>
-        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;"><strong style="color: var(--text);">At premium and above, no.</strong> Nobody choosing between a $22 DAOU Cabernet and a $50 Caymus is considering a can of anything. Premium wine occupies occasions &mdash; dinner, entertaining, gifting, restaurant dining &mdash; that RTDs cannot reach. This is why La Marca (+4.1%) and Josh Cellars (+0.8%) are the only two of the top 10 brands still growing.</p>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;"><strong style="color: var(--text);">At premium and above, no.</strong> Nobody choosing between a $22 DAOU Cabernet and an $85 Caymus is considering a can of anything. Premium wine occupies occasions &mdash; dinner, entertaining, gifting, restaurant dining &mdash; that RTDs cannot reach. This is why La Marca (+4.1%) and Josh Cellars (+0.8%) are the only two of the top 10 brands still growing.</p>
         <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">Products like BeatBox are legally classified as "wine-based" due to their production base, but the consumer buying a BeatBox Tetra Pak at a festival is choosing between that and White Claw &mdash; not between that and Chardonnay. Including these products as "wine brands" distorts the picture of what drives actual wine brand success.</p>
         <p style="font-size: 0.9rem; color: var(--text-muted);">Wine has a format answer. Brands like <strong style="color: var(--text);">Archer Roose, Bev, and Underwood</strong> are putting actual wine in cans, while <strong style="color: var(--text);">Barefoot, French Rabbit, and Yellow+Blue</strong> use Tetra Paks &mdash; expanding wine into outdoor, festival, airline, and on-the-go occasions that glass bottles can't reach. The winning move isn't to fight RTDs on their turf. It's to <strong style="color: var(--text);">expand wine's occasion set</strong> with format innovation and make wine relevant to the generation that's open to it but needs a reason to reach for it.</p>
     </div>
@@ -983,7 +856,6 @@
         <div class="sources-grid">
             <a href="https://www.chicagobooth.edu/research/kilts/research-data/nielseniq">NielsenIQ Consumer Panel &amp; Scanner Data (Kilts Center, Chicago Booth)</a>
             <a href="https://www.circana.com/">Circana (formerly IRI) &mdash; Retail &amp; Consumer Data</a>
-            <a href="https://www.nabca.org/">NABCA &mdash; National Alcohol Beverage Control Association</a>
         </div>
 
         <h3 style="margin-top: 2rem;">Industry Data Providers</h3>
