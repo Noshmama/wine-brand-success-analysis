@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>What Makes Top-Performing Wine Brands Succeed</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
     <style>
         :root {
             --bg: #f8f9fb;
@@ -75,31 +74,6 @@
             font-size: 0.95rem;
             color: var(--text-muted);
             margin-bottom: 2rem;
-        }
-
-        .chart-container {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 2rem;
-            margin: 2rem 0;
-        }
-
-        .chart-container h3 {
-            font-size: 1.15rem;
-            margin-bottom: 0.35rem;
-        }
-
-        .chart-container .chart-desc {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-        }
-
-        .chart-wrap {
-            position: relative;
-            width: 100%;
-            max-height: 600px;
         }
 
         /* Pillars */
@@ -664,18 +638,6 @@
         <p>The U.S. wine market fell 5% by volume in 2025 to an estimated 298 million 9-liter cases &mdash; below 300 million for the first time in two decades. Of the 10 largest wine brands tracked by NielsenIQ, only two grew: La Marca (+4.1%) and Josh Cellars (+0.8%). The other eight declined, led by Stella Rosa (-18.3%), Woodbridge (-9.3%), and Franzia (-6.7%). We identified seven factors that drive wine brand success. The higher the price tier, the more resilient the performance: premium brands ($10-$25) declined less than 3%, and ultra-premium winery revenues fell just 1.2% in the first half of 2025 vs. 5% for the total market &mdash; but even at the top, nobody is immune. The catastrophic failure of Vintage Wine Estates &mdash; which borrowed heavily to buy 60+ brands without investing in any of them, ending in $400M in liabilities and bankruptcy &mdash; proves that acquisition without brand-building is fatal. Wine's primary competitive threat is not RTDs or spirits directly, but a generational shift in drinking occasions &mdash; younger consumers are choosing from a wider repertoire of beverages, making it harder for any single wine brand to build habitual loyalty. The data points to different strategies by tier. At value (under $10), the tier is in structural decline and no brand is growing &mdash; but Barefoot's NFL partnership recruited 3.7M new buyers, showing that cultural marketing and format innovation (Tetra Paks, cans) can keep a value brand relevant while the tier shrinks. At premium ($10-$25), the brands holding up best own a specific varietal: La Marca owns Prosecco (+4.1%), Josh Cellars owns affordable Cabernet (+0.8%), while brands spread across declining varietals like Merlot and Pinot Grigio are falling. At ultra-premium ($25+), brand story and portfolio focus are everything: Duckhorn cut 4 underperforming labels and saw Q1 sales jump 19.9%, while VWE collected 60+ brands without building any of them and went bankrupt. Across all tiers, the common thread is the same: invest in fewer brands, own your category, and give consumers a reason to choose you.</p>
     </div>
 
-    <!-- CHART: Brand Growth -->
-    <h2 class="section-title">Brand Growth: Winners vs. Losers</h2>
-    <p class="section-subtitle">Year-over-year volume growth for the 10 largest wine brands in U.S. retail channels.</p>
-
-    <div class="chart-container">
-        <h3>Volume Growth by Brand</h3>
-        <p class="chart-desc">Percentage change in volume. Green = growth, red = decline. Source: NielsenIQ, 52 weeks ending December 27, 2025.</p>
-        <div class="chart-wrap">
-            <canvas id="growthChart"></canvas>
-        </div>
-    </div>
-
     <!-- 7 Pillars -->
     <h2 class="section-title">The Seven Pillars of Wine Brand Success</h2>
     <p class="section-subtitle">The factors that predict whether a wine brand will outperform in a declining market.</p>
@@ -1073,84 +1035,6 @@
     Wine Brand Success Analysis &mdash; Data through Full-Year 2025 &mdash; Published February 2026
 </footer>
 
-<script>
-    const growthCtx = document.getElementById('growthChart').getContext('2d');
-
-    const brands = [
-        'La Marca', 'Josh Cellars',
-        'Black Box', 'Sutter Home', 'Kendall-Jackson',
-        'Bota Box', 'Barefoot',
-        'Franzia', 'Woodbridge', 'Stella Rosa'
-    ];
-
-    const growthValues = [
-        4.1, 0.8,
-        -2.1, -2.8, -3.4,
-        -3.6, -4.8,
-        -6.7, -9.3, -18.3
-    ];
-
-    const barColors = growthValues.map(v =>
-        v > 0 ? 'rgba(22, 163, 74, 0.75)' :
-        'rgba(220, 38, 38, 0.75)'
-    );
-
-    const borderColors = growthValues.map(v =>
-        v > 0 ? 'rgba(22, 163, 74, 1)' :
-        'rgba(220, 38, 38, 1)'
-    );
-
-    new Chart(growthCtx, {
-        type: 'bar',
-        data: {
-            labels: brands,
-            datasets: [{
-                label: 'YoY Growth %',
-                data: growthValues,
-                backgroundColor: barColors,
-                borderColor: borderColors,
-                borderWidth: 1,
-                borderRadius: 4
-            }]
-        },
-        options: {
-            indexAxis: 'y',
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: { display: false },
-                tooltip: {
-                    callbacks: {
-                        label: function(ctx) {
-                            const v = ctx.parsed.x;
-                            return (v > 0 ? '+' : '') + v + '%';
-                        }
-                    }
-                }
-            },
-            scales: {
-                x: {
-                    grid: { color: 'rgba(0, 0, 0, 0.06)' },
-                    ticks: {
-                        color: '#5f6776',
-                        callback: function(v) { return (v > 0 ? '+' : '') + v + '%'; }
-                    },
-                    title: {
-                        display: true,
-                        text: 'Year-over-Year Growth (%)',
-                        color: '#5f6776'
-                    }
-                },
-                y: {
-                    grid: { display: false },
-                    ticks: { color: '#1a1d27', font: { weight: '500' } }
-                }
-            }
-        }
-    });
-
-    document.getElementById('growthChart').parentElement.style.height = '350px';
-</script>
 
 </body>
 </html>
