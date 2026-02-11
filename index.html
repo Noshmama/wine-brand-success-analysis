@@ -104,24 +104,35 @@
 
         /* Pillars */
         .pillars {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
             margin: 2rem 0;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
         }
 
         .pillar-card {
             background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1.5rem;
+            padding: 1.25rem 1.5rem;
+            display: grid;
+            grid-template-columns: 40px 180px 1fr;
+            gap: 1rem;
+            align-items: start;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .pillar-card:last-child {
+            border-bottom: none;
+        }
+
+        .pillar-card:hover {
+            background: rgba(124, 58, 237, 0.03);
         }
 
         .pillar-card .pillar-header {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 0.75rem;
+            display: contents;
         }
 
         .pillar-card .pillar-num {
@@ -129,9 +140,9 @@
             color: #fff;
             font-weight: 700;
             font-size: 0.8rem;
-            width: 28px;
-            height: 28px;
-            border-radius: 8px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -141,11 +152,13 @@
         .pillar-card .pillar-name {
             font-weight: 600;
             font-size: 1rem;
+            padding-top: 0.3rem;
         }
 
         .pillar-card .pillar-example {
             font-size: 0.85rem;
             color: var(--text-muted);
+            line-height: 1.6;
         }
 
         .pillar-card .pillar-example strong {
@@ -154,6 +167,16 @@
 
         .pillar-card .pillar-example .loser {
             color: var(--red);
+        }
+
+        @media (max-width: 700px) {
+            .pillar-card {
+                grid-template-columns: 32px 1fr;
+                grid-template-rows: auto auto;
+            }
+            .pillar-card .pillar-example {
+                grid-column: 1 / -1;
+            }
         }
 
         /* Tables */
@@ -600,7 +623,6 @@
         @media (max-width: 700px) {
             .hero h1 { font-size: 1.6rem; }
             .vs-row { grid-template-columns: 1fr; }
-            .pillars { grid-template-columns: 1fr; }
         }
     </style>
 </head>
